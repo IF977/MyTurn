@@ -14,9 +14,5 @@ My Turn é um aplicativo para fazer agendamento quanto a entrega de mercadorias 
 
 [Repositório][df1]
 
-
    [df1]: <https://github.com/IF977/MyTurn>
    [df2]: <https://biliopaulista.herokuapp.com/>
-
-My Turn é um aplicativo para fazer agendamento quanto a entrega de mercadorias no atacado Bilio. Ele agenda tantos carros quanto a previsão de entrega permitir durante as 6 horas diárias. De acordo com o [tipo de carga][df1], [tipo do transporte][df1], [quantidade][df1] e [trabalhadores][df1]
-
