@@ -1,7 +1,15 @@
-<% provide(:title, "Home") %>
-<h1>Agendamento Bilio Paulista</h1>
-<p>
-  This is the home page for the
-  <a href="https://biliopaulista.herokuapp.com/">Agendamento</a>
-  Bilio Paulista.
-</p>
+<div class="center jumbotron">
+  <h1>Bem-vindo ao site de agendamento da empresa Bilio Estivas Paulista</h1>
+
+  <h2>
+    Esse é o site para fazer o agendamento de entregas na 
+    <a href="https://biliopaulista.herokuapp.com/">Bilio Estivas Paulista</a>
+    .
+  </h2>
+
+  <%= link_to "Cadastre-se agora!", '#', class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("https://s21.postimg.org/d56eju7o7/", alt: "Bilio logo"),
+            'https://postimg.org/image/gosc9nadv/' %>
+
