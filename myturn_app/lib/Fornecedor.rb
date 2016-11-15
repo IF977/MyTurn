@@ -3,6 +3,6 @@ class Fornecedor
   
   def initialize
     @cnpj = "12586325000112"
-    @razaosocial = "Embare Industria S/A"
+    @razaosocial = "Embare Industria"
   end
 end
