@@ -1,10 +1,17 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :correct_user,   only: [:edit, :update]
+  before_action :admin_user,     only: :destroy
 
   # GET /users
   # GET /users.json
   def index
     @users = User.all
+  end
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "Usuário deletado"
+    redirect_to users_url
   end
 
   # GET /users/1
@@ -20,6 +27,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find(params[:id])
   end
 
   # POST /users
@@ -29,9 +37,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        log_in @user
-        format.html { redirect_to @user, notice: 'Usuário criado com sucesso.' }
-        format.json { render :show, status: :created, location: @user }
+        @user.send_activation_email
+        flash[:info] = "Por favor, cheque seu email para ativar sua conta."
+        redirect_to root_url
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -43,7 +51,8 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
+       @user = User.find(params[:id])
+      if @user.update_attributes(user_params)
         format.html { redirect_to @user, notice: 'Usuário foi atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -61,6 +70,13 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'Usuário foi deletado com sucesso.' }
       format.json { head :no_content }
     end
+  end
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
+  end
+  def admin_user
+      redirect_to(root_url) unless current_user.admin?
   end
 
   private
