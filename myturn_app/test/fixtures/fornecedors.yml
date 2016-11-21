@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  razaosocial: MyString
-  CNPJ: MyString
-
-two:
-  razaosocial: MyString
-  CNPJ: MyString
