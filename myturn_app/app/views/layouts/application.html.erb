@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= full_title(yield(:title)) %></title>
+    <title>Agendamento Bilio Paulista</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all',
                                               'data-turbolinks-track': 'reload' %>
@@ -21,7 +21,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   '#' %></li>
             <li><%= link_to "Help",   '#' %></li>
-            <li><%= link_to "Log in", '#' %></li>
+            <li><%= link_to "Log in", login_path %></li>
           </ul>
         </nav>
       </div>
