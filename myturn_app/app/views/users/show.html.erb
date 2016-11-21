@@ -1,24 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-</div><p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="panel panel-default">
+  <div class="panel-heading text-center">Perfil</div>
+  <div id="painel_body" class="paine-body">
+    <div class="row">
+            <div class="col-md-6">
+              <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <strong>Nome</strong></p>
+              
+              <ul class="list-group">
+                <li class="list-group-item"><%= @user.name %></li>
+              </ul>
+            </div>
+      </div>
+      
+      <div class="row">
+            <div class="col-md-6">
+              <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <strong>Email</strong></p>
+              <ul class="list-group">
+                <li class="list-group-item"><%= @user.email %></li>
+              </ul>
+            </div>
+      </div>
+  </div>
+</div>

@@ -2,9 +2,8 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
-
-  # GET /users
-  # GET /users.json
+  layout "formL", except: [:show, :edit, :update]
+  
   def index
     @users = User.all
   end
@@ -14,8 +13,6 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-  # GET /users/1
-  # GET /users/1.json
   def show
   @user = User.find(params[:id])
   end
@@ -37,8 +34,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        @user.send_activation_email
-        flash[:info] = "Por favor, cheque seu email para ativar sua conta."
+        #@user.send_activation_email
+        #flash[:info] = "Por favor, cheque seu email para ativar sua conta."
         redirect_to root_url
       else
         format.html { render :new }
