@@ -1,0 +1,17 @@
+luciano:
+  name: Luciano
+  email: nanotrigueiro@gmail.com
+  password_digest: <%= User.digest('password') %>
+  #activated: true
+  #activated_at: <%= Time.zone.now %>
+
+  
+renata:
+  name: Renata
+  email: rca14@cin.ufpe.br
+  password_digest: <%= User.digest('password') %>
+  admin: true
+  #activated: true
+  #activated_at: <%= Time.zone.now %>
+
+  
