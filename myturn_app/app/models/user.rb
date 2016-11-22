@@ -15,17 +15,17 @@ class User < ApplicationRecord
     BCrypt::Password.create(string, cost: cost)
   end
   def activate
-    #update_attribute(:activated,    true)
-    #update_attribute(:activated_at, Time.zone.now)
+    update_attribute(:activated,    true)
+    update_attribute(:activated_at, Time.zone.now)
   end
   # Sends activation email.
   def send_activation_email
-    #UserMailer.account_activation(self).deliver_now
+    UserMailer.account_activation(self).deliver_now
   end
   def create_reset_digest
-    #self.reset_token = User.new_token
-    #update_attribute(:reset_digest,  User.digest(reset_token))
-    #update_attribute(:reset_sent_at, Time.zone.now)
+    self.reset_token = User.new_token
+    update_attribute(:reset_digest,  User.digest(reset_token))
+    update_attribute(:reset_sent_at, Time.zone.now)
   end
 
   # Sends password reset email.
@@ -33,7 +33,7 @@ class User < ApplicationRecord
     UserMailer.password_reset(self).deliver_now
   end
   def password_reset_expired?
-    #reset_sent_at < 2.hours.ago
+    reset_sent_at < 2.hours.ago
   end
   private
 
@@ -44,7 +44,7 @@ class User < ApplicationRecord
 
     # Creates and assigns the activation token and digest.
     def create_activation_digest
-      #self.activation_token  = User.new_token
-      #self.activation_digest = User.digest(activation_token)
+      self.activation_token  = User.new_token
+      self.activation_digest = User.digest(activation_token)
     end
 end

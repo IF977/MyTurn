@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:tipoarmazenamentos, url: tipoarmazenamento_path) do |f| %>
+    <%= form_for(:tipoarmazenamentos, url: new_tipoarmazenamento_path) do |f| %>
     
       <%= f.label :descricao %>
       <%= f.descricao_field :descricao, class: 'form-control' %>

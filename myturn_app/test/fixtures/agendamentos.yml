@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ID_Usuario: MyString
+  Qtd_Trabalhadores: MyString
+  Data: 2016-11-22 22:18:30
+  TempoEntrega: MyString
+  Paletizacao: MyString
+  ID_TipoArmazenamento: MyString
+  ID_Fornecedor: MyString
+
+two:
+  ID_Usuario: MyString
+  Qtd_Trabalhadores: MyString
+  Data: 2016-11-22 22:18:30
+  TempoEntrega: MyString
+  Paletizacao: MyString
+  ID_TipoArmazenamento: MyString
+  ID_Fornecedor: MyString

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id usuario:</strong>
+  <%= @agendamento.ID_Usuario %>
+</p>
+
+<p>
+  <strong>Qtd trabalhadores:</strong>
+  <%= @agendamento.Qtd_Trabalhadores %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @agendamento.Data %>
+</p>
+
+<p>
+  <strong>Tempoentrega:</strong>
+  <%= @agendamento.TempoEntrega %>
+</p>
+
+<p>
+  <strong>Paletizacao:</strong>
+  <%= @agendamento.Paletizacao %>
+</p>
+
+<p>
+  <strong>Id tipoarmazenamento:</strong>
+  <%= @agendamento.ID_TipoArmazenamento %>
+</p>
+
+<p>
+  <strong>Id fornecedor:</strong>
+  <%= @agendamento.ID_Fornecedor %>
+</p>
+
+<%= link_to 'Edit', edit_agendamento_path(@agendamento) %> |
+<%= link_to 'Back', agendamentos_path %>

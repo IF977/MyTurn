@@ -1,35 +1,23 @@
 <div class="panel panel-default">
-  <div class="panel-heading" id="painel_list"><div class="text-center">Tipo Armazenamento</div></div>
-    <div class="panel-body">
-    <p id="notice"><%= notice %></p>
-    
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>
-             <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-               Descrição
-          </th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-    
-      <tbody>
-        <% @tipoarmazenamentos.each do |tipoarmazenamento| %>
-          <tr>
-            <td><%= tipoarmazenamento.descricao %></td>
-            <td><%= link_to 'Mostrar', tipoarmazenamento %></td>
-            <td><%= link_to 'Editar', edit_tipoarmazenamento_path(tipoarmazenamento) %></td>
-            <td><%= link_to 'Deletar', tipoarmazenamento, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-    
-    <br>
-    
-    <div class="text-center"> <%= link_to 'Novo Tipo de Armazenamento', new_tipoarmazenamento_path, {:style=>'color:black;', :class => "btn btn-default"} %> </div>
-    
-    
+  <div class="panel-heading text-center">Perfil</div>
+  <div id="painel_body" class="paine-body">
+    <div class="row">
+            <div class="col-md-6">
+              <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <strong>Nome</strong></p>
+              
+              <ul class="list-group">
+                <li class="list-group-item"><%= @user.name %></li>
+              </ul>
+            </div>
+      </div>
+      
+      <div class="row">
+            <div class="col-md-6">
+              <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <strong>Email</strong></p>
+              <ul class="list-group">
+                <li class="list-group-item"><%= @user.email %></li>
+              </ul>
+            </div>
+      </div>
   </div>
 </div>

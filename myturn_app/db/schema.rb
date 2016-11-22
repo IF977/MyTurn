@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122131356) do
+ActiveRecord::Schema.define(version: 20161122221830) do
+
+  create_table "agendamentos", force: :cascade do |t|
+    t.string   "ID_Usuario"
+    t.string   "Qtd_Trabalhadores"
+    t.datetime "Data"
+    t.string   "TempoEntrega"
+    t.string   "Paletizacao"
+    t.string   "ID_TipoArmazenamento"
+    t.string   "ID_Fornecedor"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
 
   create_table "fornecedors", force: :cascade do |t|
     t.string   "razaosocial"
