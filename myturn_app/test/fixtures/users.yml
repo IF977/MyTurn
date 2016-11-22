@@ -1,4 +1,0 @@
-luciano:
-  name: Luciano
-  email: nanotrigueiro@gmail.com
-  password_digest: <%= User.digest('password') %>
