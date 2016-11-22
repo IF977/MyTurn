@@ -1,0 +1,1 @@
+json.partial! "tipoarmazenamentos/tipoarmazenamento", tipoarmazenamento: @tipoarmazenamento

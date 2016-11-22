@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+    <div class="panel-heading" id="painel_list"><div class="text-center">Tipo Armazenamento</div></div>
+    <div id="painel_body" class="paine-body">
+      
+      <div class="row">
+        <div class="col-md-6">
+          <strong>Descricao</strong>
+          <ul class="list-group">
+            <li class="list-group-item"><%= @tipoarmazenamento.descricao %></li>
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="text-center" id="buttons_show">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pull-right">
+              <div class="text-center"> <%= link_to 'Editar', edit_tipoarmazenamento_path(@tipoarmazenamento), {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pull-left">
+              <div class="text-center"> <%= link_to 'Voltar', tipoarmazenamentos_path,  {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  </div>
+</div><p id="notice"><%= notice %></p>

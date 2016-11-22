@@ -1,0 +1,2 @@
+module TipoarmazenamentosHelper
+end

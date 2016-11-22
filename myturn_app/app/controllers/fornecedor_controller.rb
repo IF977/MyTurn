@@ -1,5 +1,5 @@
 class FornecedorController < ApplicationController
- before_action :set_fornecedor, only: [:show]
+ before_action :set_fornecedor, only: [:show, :edit]
 
   def index
     @fornecedor = Fornecedor.all

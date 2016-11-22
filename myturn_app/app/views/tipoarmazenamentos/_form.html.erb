@@ -1,0 +1,22 @@
+<%= form_for(tipoarmazenamento) do |f| %>
+  <% if tipoarmazenamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tipoarmazenamento.errors.count, "error") %> prohibited this tipoarmazenamento from being saved:</h2>
+
+      <ul>
+      <% tipoarmazenamento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descricao %>
+    <%= f.text_field :descricao %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

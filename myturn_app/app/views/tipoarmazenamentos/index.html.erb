@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tipo de Armazenamento</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descrição</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipoarmazenamentos.each do |tipoarmazenamento| %>
+      <tr>
+        <td><%= tipoarmazenamento.descricao %></td>
+        <td><%= link_to 'Show', tipoarmazenamento %></td>
+        <td><%= link_to 'Edit', edit_tipoarmazenamento_path(tipoarmazenamento) %></td>
+        <td><%= link_to 'Destroy', tipoarmazenamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Criar Tipo de Armazenamento', new_tipoarmazenamento_path %>
