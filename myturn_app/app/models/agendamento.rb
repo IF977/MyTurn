@@ -1,4 +1,4 @@
-class Agendamento < ApplicationRecord
+class Agendamento < ActiveRecord::Base
   belongs_to :user
   has_many :fornecedor, dependent: :destroy
   validates :user_id, presence: true

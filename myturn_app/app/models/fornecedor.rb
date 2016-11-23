@@ -1,4 +1,4 @@
-class Fornecedor < ApplicationRecord
+class Fornecedor < ActiveRecord::Base
  attr_accessor :remember_token, :activation_token, :reset_token
  validates :CNPJ, presence: true, length: { maximum: 14 }
  validates_presence_of :razaosocial, message: ' Não pode ser deixado em branco'
