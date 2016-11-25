@@ -15,6 +15,8 @@ class AgendamentosController < ApplicationController
   # GET /agendamentos/new
   def new
     @agendamento = Agendamento.new
+    @user = current_user
+    
   end
 
   # GET /agendamentos/1/edit
@@ -24,8 +26,8 @@ class AgendamentosController < ApplicationController
   # POST /agendamentos
   # POST /agendamentos.json
   def create
-    @agendamento = Agendamento.new(agendamento_params)
-
+    @agendamento = current_user.agendamentos.build(agendamento_params)
+    
     respond_to do |format|
       if @agendamento.save
         format.html { redirect_to @agendamento, notice: 'Agendamento foi criado com sucesso.' }
@@ -69,6 +71,6 @@ class AgendamentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def agendamento_params
-      params.require(:agendamento).permit(:ID_Usuario, :Qtd_Trabalhadores, :Data, :TempoEntrega, :Paletizacao, :ID_TipoArmazenamento, :ID_Fornecedor)
+      params.require(:agendamento).permit(:user_id, :Qtd_Trabalhadores, :Data, :TempoEntrega, :Paletizacao, :ID_TipoArmazenamento, :ID_Fornecedor)
     end
 end

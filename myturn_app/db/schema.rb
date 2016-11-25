@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122221830) do
+ActiveRecord::Schema.define(version: 20161125201127) do
 
   create_table "agendamentos", force: :cascade do |t|
-    t.string   "ID_Usuario"
+    t.string   "user_id"
     t.string   "Qtd_Trabalhadores"
     t.datetime "Data"
     t.string   "TempoEntrega"

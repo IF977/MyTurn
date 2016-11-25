@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :ID_Usuario %>
-    <%= f.text_field :ID_Usuario %>
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id, :value => current_user.id %>
   </div>
 
   <div class="field">

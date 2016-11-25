@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :fornecedors
   resources :agendamentos
   resources :tipoarmazenamentos
   resources :fornecedor

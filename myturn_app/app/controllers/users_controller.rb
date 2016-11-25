@@ -31,12 +31,14 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    @user.activated = true
+    @user.admin = true
     respond_to do |format|
       if @user.save
         #@user.send_activation_email
         #flash[:info] = "Por favor, cheque seu email para ativar sua conta."
-        redirect_to root_url
+        format.html { redirect_to root_url  }
+        
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }

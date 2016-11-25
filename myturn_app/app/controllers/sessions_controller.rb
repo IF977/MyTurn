@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+  include SessionsHelper
+  
+  
   layout "formL"
   def new
   end
@@ -7,9 +10,9 @@ class SessionsController < ApplicationController
    user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       if user.activated?
-        log_in user
+        log_in(user)
         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-        redirect_back_or user
+        redirect_to agendamentos_path
       else
         message  = "Conta nao ativada. "
         message += "Verifique seu email para ativar sua conta."
