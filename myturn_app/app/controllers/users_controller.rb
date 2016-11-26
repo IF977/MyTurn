@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :correct_user,   only: [:index, :edit, :update, :destroy]
   before_action :admin_user,     only: :destroy
   layout "formL", except: [:show, :edit, :update]
   
@@ -8,8 +8,11 @@ class UsersController < ApplicationController
     @users = User.all
   end
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "Usuário deletado"
+    User.find(params[:id])
+    if user_id.present?
+      user_id.destroy
+      flash[:success] = "Usuário deletado"
+    end
     redirect_to users_url
   end
 
@@ -64,11 +67,9 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'Usuário foi deletado com sucesso.' }
-      format.json { head :no_content }
-    end
+    User.find(params[:id]).destroy
+    flash[:success] = "Usuario Deletado"
+    redirect_to root_url
   end
   def correct_user
     @user = User.find(params[:id])
@@ -88,5 +89,9 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
+    end
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(current_user || root_url) unless current_user?(@user)
     end
 end

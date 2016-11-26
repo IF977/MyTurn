@@ -43,4 +43,7 @@ module SessionsHelper
     redirect_to(session[:forwarding_url] || default)
     session.delete(:forwarding_url)
   end
+  def store_location
+    session[:forwarding_url] = request.url if request.get? # so se o request for get, pois pode dar erro se for POST, PATCH ou delete
+  end
 end

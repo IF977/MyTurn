@@ -13,17 +13,7 @@ class TipoarmazenamentosController < ApplicationController
   
   # GET /tipoarmazenamentos/new
   def new
-    @tipoarmazenamento = Tipoarmazenamento.new(tipoarmazenamento_params)
-
-    respond_to do |format|
-      if @tipoarmazenamento.save
-        format.html { redirect_to @tipoarmazenamento, notice: 'Tipo de armazenamento foi criado com sucesso.' }
-        format.json { render :show, status: :created, location: @tipoarmazenamento }
-      else
-        format.html { render :new }
-        format.json { render json: @tipoarmazenamento.errors, status: :unprocessable_entity }
-      end
-    end
+    @tipoarmazenamento = Tipoarmazenamento.new
   end
 
   # GET /tipoarmazenamentos/1/edit
@@ -65,7 +55,7 @@ class TipoarmazenamentosController < ApplicationController
   def destroy
     @tipoarmazenamento.destroy
     respond_to do |format|
-      format.html { redirect_to tipoarmazenamentos_url, notice: 'Tipoarmazenamento was successfully destroyed.' }
+      format.html { redirect_to tipoarmazenamentos_url, notice: 'Tipo de armazenamento foi destruído com sucesso.' }
       format.json { head :no_content }
     end
   end
@@ -76,7 +66,6 @@ class TipoarmazenamentosController < ApplicationController
     @tipoarmazenamento = Tipoarmazenamento.find(params[:id])
   end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
   def tipoarmazenamento_params
     params.require(:tipoarmazenamento).permit(:descricao)
   end
