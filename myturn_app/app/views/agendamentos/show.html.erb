@@ -1,39 +1,66 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Id usuario:</strong>
-  <%= @agendamento.user_id %>
-</p>
-
-<p>
-  <strong>Qtd trabalhadores:</strong>
-  <%= @agendamento.Qtd_Trabalhadores %>
-</p>
-
-<p>
-  <strong>Data:</strong>
-  <%= @agendamento.Data %>
-</p>
-
-<p>
-  <strong>Tempoentrega:</strong>
-  <%= @agendamento.TempoEntrega %>
-</p>
-
-<p>
-  <strong>Paletizacao:</strong>
-  <%= @agendamento.Paletizacao %>
-</p>
-
-<p>
-  <strong>Id tipoarmazenamento:</strong>
-  <%= @agendamento.ID_TipoArmazenamento %>
-</p>
-
-<p>
-  <strong>Id fornecedor:</strong>
-  <%= @agendamento.ID_Fornecedor %>
-</p>
-
-<%= link_to 'Edit', edit_agendamento_path(@agendamento) %> |
-<%= link_to 'Back', agendamentos_path %>
+<div class="panel panel-default">
+    <div class="panel-heading" id="painel_list"><div class="text-center">Consulta de Agendamentos</div></div>
+    <div id="painel_body" class="paine-body">
+      <table class="table table-hover">
+      <div class="row">
+        <div class="col-md-2">
+          <strong>Usúario</strong>
+          <ul class="list-group">
+            <li class="list-group-agendamento"><%= @agendamento.user_id %></li>
+          </ul>
+        </div>
+        <div class="col-md-1">
+          <strong>Chapa</strong>
+            <ul class="list-group">
+              <li class="list-group-agendamento"><%= @agendamento.Qtd_Trabalhadores %></li>
+            </ul>
+        </div>
+      <div class="col-md-2">
+          <strong>Data</strong>
+          <ul class="list-group">
+            <li class="list-group-agendamento"><%= @agendamento.Data %></li>
+          </ul>
+      </div>
+      <div class="col-md-2">
+          <strong>Tempo de Entrega</strong>
+            <ul class="list-group">
+              <li class="list-group-agendamento"><%= @agendamento.TempoEntrega %></li>
+            </ul>
+      </div>
+      <div class="col-md-1">
+          <strong>Paletização</strong>
+            <ul class="list-group">
+              <li class="list-group-agendamento"><%= @agendamento.Paletizacao %></li>
+            </ul>
+      </div>
+      <div class="col-md-2">
+          <strong>Armazenamento</strong>
+            <ul class="list-group">
+              <li class="list-group-agendamento"><%= @agendamento.ID_TipoArmazenamento %></li>
+            </ul>
+      </div>
+      <div class="col-md-2">
+          <strong>Fornecedor</strong>
+            <ul class="list-group">
+              <li class="list-group-agendamento"><%= @agendamento.ID_Fornecedor %></li>
+            </ul>
+      </div>
+      </div>
+      </table>
+<div class="text-center" id="buttons_show">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="pull-right">
+              <div class="text-center"> <%= link_to 'Editar', edit_agendamento_path(@agendamento), {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="pull-left">
+              <div class="text-center"> <%= link_to 'Voltar', agendamento_path,  {:style=>'color:black;', :class => "btn btn-default"} %> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  </div>
+</div>

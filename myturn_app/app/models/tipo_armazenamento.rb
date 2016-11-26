@@ -1,2 +1,0 @@
-class TipoArmazenamento < ApplicationRecord
-end
