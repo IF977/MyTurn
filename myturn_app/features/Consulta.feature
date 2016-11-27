@@ -1,3 +1,4 @@
+@javascript
 Feature: Consulta page
 
 Scenario:

@@ -1,3 +1,4 @@
+@javascript
 Feature:Agendamento page
 
 Scenario:Acess Agendamento page
