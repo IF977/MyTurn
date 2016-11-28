@@ -4,7 +4,7 @@ class AgendamentosController < ApplicationController
   # GET /agendamentos
   # GET /agendamentos.json
   def index
-    @agendamentos = Agendamento.all
+    @agendamentos = current_user.agendamentos.all
   end
 
   # GET /agendamentos/1
@@ -21,6 +21,7 @@ class AgendamentosController < ApplicationController
 
   # GET /agendamentos/1/edit
   def edit
+    
   end
 
   # POST /agendamentos

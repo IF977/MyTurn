@@ -22,10 +22,10 @@
     <%= render 'layouts/header' %>
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <%= link_to "Agendamento Bilio Paulista", '#' , id: "logo" %>
+        <%= link_to "Agendamento Bilio Paulista", root_path, id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Agendamento", agendamentos_path %></li>
+            <li><%= link_to "Agendamentos", agendamentos_path %></li>
             <li><%= link_to "Fornecedores", fornecedors_path %></li>
             <li><%= link_to "Usuário", edit_user_path(:"8") %></li>
             <li><%= link_to "Entrar", login_path %></li>
