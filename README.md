@@ -18,4 +18,4 @@ My Turn é um aplicativo para fazer agendamento quanto a entrega de mercadorias 
 
    [df1]: <https://github.com/IF977/MyTurn>
    [df2]: <https://biliopaulista.herokuapp.com/>
-   [df3]: <http://screencastle.com/watch/2a278b483365322f7de6e7485684a280>
+   [df3]: <http://screencastle.com/watch/e742a6fb0491c6ca734fdfeb416f7fcd>
